@@ -31,7 +31,7 @@ const EventCard = ({ event }) => {
       )}
 
       <Link to={`/events/${event._id}`}>
-        <Button className="mt-4 w-full bg-[#FFB22C] text-black">
+        <Button className="mt-4 w-full bg-[#FFB22C] text-black hover:text-white transition-colors">
           👁 View Event
         </Button>
       </Link>

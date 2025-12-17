@@ -116,7 +116,7 @@ const EventDetails = () => {
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-[#F7F7F7] px-4 py-8">
-      <div className="bg-white p-8 rounded-xl w-full max-w-lg shadow-lg space-y-6">
+      <div className="bg-white p-8 rounded-xl w-full max-w-lg shadow-lg space-y-6 relative">
 
         {/* IMAGE UPLOAD FOR OWNER */}
         {isOwner && (
@@ -233,6 +233,13 @@ const EventDetails = () => {
               </Button>
             )}
           </div>
+        )}
+
+        {/* CREATOR NAME AT BOTTOM RIGHT */}
+        {event.createdBy?.name && (
+          <p className="absolute bottom-4 right-4 text-gray-500 text-sm">
+            👤 Created by: <span className="font-medium">{event.createdBy.name}</span>
+          </p>
         )}
 
       </div>
