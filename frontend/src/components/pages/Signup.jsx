@@ -35,7 +35,7 @@ const Signup = () => {
     setSuccess("");
 
     try {
-      await axios.post("http://localhost:5000/api/auth/register", formData);
+      await axios.post("https://eventify-backend-0eqk.onrender.com/api/auth/register", formData);
       setSuccess("Account created successfully. Please login.");
       
       setTimeout(() => {
