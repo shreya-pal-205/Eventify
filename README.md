@@ -65,3 +65,80 @@ const event = await Event.findOneAndUpdate(
   { new: true }
 );
 
+```
+
+
+# Eventify - Event Management Platform
+
+Eventify is a modern event management web application that allows users to create, manage, and RSVP for events. It includes advanced features like AI-generated event descriptions, real-time RSVP handling with concurrency control, image uploads via Cloudinary, and a beautiful frontend interface.
+
+---
+
+## Running the Application Locally
+
+Follow these steps to set up and run the application on your local machine.
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/eventify.git
+cd event management
+```
+
+### 2. Install backend dependencies
+
+```bash
+cd backend
+npm install
+```
+
+### 3. Set up environment variables
+
+```env
+PORT=5000
+MONGO_URL=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+```
+
+### 4. Start the backend server
+
+```bash
+npm run dev
+```
+
+### 5. Install frontend dependencies
+
+```bash
+cd ../frontend
+npm install
+```
+
+### 6. Setup frontend environment variables
+
+```env
+VITE_GEMINI_API_KEY=gemini_api
+```
+
+### 7. Start the frontend server
+
+```bash
+npm run dev
+```
+---
+### Uploads & Images
+
+- Event images are uploaded via **Multer** and stored on **Cloudinary**.
+- Make sure your Cloudinary credentials in the `.env` file are correctly set:
+
+```env
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+Once uploaded, images will be accessible and displayed correctly on the frontend.
+
+The backend serves the image URLs returned by Cloudinary, so no local file paths are used.
+
+
