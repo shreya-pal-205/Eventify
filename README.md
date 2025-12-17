@@ -2,6 +2,8 @@
 
 Eventify is a modern web application that allows users to create, manage, and attend events seamlessly. It provides real-time RSVP tracking, automated event description generation using AI, and a visually appealing dashboard for managing events.
 
+**Deploy Link** -> https://eventify-sxd3.onrender.com
+
 ---
 
 ## Features
