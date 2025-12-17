@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Base URL of your backend
-const API_URL = "http://localhost:5000/api/events";
+const API_URL = "https://eventify-backend-0eqk.onrender.com/api/events";
 
 // Helper to get auth header
 const getAuthHeader = () => ({
