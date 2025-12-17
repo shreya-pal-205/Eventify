@@ -35,7 +35,7 @@ export function AuthProvider({ children }) {
 
   const signup = async (name, email, password) => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", {
+      const res = await axios.post("https://eventify-backend-0eqk.onrender.com/api/auth/register", {
         name,
         email,
         password,
