@@ -20,7 +20,7 @@ export const getEventById = (id) => {
   return axios.get(`${API_URL}/${id}`, getAuthHeader());
 };
 
-// Create new event (JSON only)
+// Create new event 
 export const createEvent = (formData) => {
   return axios.post(API_URL, formData, {
     headers: {
@@ -30,7 +30,7 @@ export const createEvent = (formData) => {
   });
 };
 
-// Update event by ID (JSON only)
+// Update event by ID 
 export const updateEvent = (id, formData) => {
   return axios.put(`${API_URL}/${id}`, formData, {
     headers: {
