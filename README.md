@@ -19,22 +19,6 @@ Eventify is a modern web application that allows users to create, manage, and at
 
 ---
 
-## Technical Explanation
-
-**RSVP Capacity & Concurrency Handling:**  
-To prevent overbooking during concurrent RSVP requests, Eventify uses **atomic updates** in MongoDB:
-
-```js
-const event = await Event.findOneAndUpdate(
-  {
-    _id: eventId,
-    attendees: { $ne: userId }, // prevent duplicate RSVPs
-    $expr: { $lt: [{ $size: "$attendees" }, "$capacity"] } // capacity check
-  },
-  { $addToSet: { attendees: userId } }, // atomic add
-  { new: true }
-);
-
 
 ## Tech Stack
 
@@ -60,3 +44,24 @@ const event = await Event.findOneAndUpdate(
 
 ### Deployment
 - **Deployed on Render** – Full-stack application hosted in the cloud for production access.
+
+---
+
+
+
+## Technical Explanation
+
+**RSVP Capacity & Concurrency Handling:**  
+To prevent overbooking during concurrent RSVP requests, Eventify uses **atomic updates** in MongoDB:
+
+```js
+const event = await Event.findOneAndUpdate(
+  {
+    _id: eventId,
+    attendees: { $ne: userId }, // prevent duplicate RSVPs
+    $expr: { $lt: [{ $size: "$attendees" }, "$capacity"] } // capacity check
+  },
+  { $addToSet: { attendees: userId } }, // atomic add
+  { new: true }
+);
+
