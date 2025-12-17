@@ -82,7 +82,7 @@ Follow these steps to set up and run the application on your local machine.
 
 ```bash
 git clone https://github.com/your-username/eventify.git
-cd event management
+cd eventify
 ```
 
 ### 2. Install backend dependencies
